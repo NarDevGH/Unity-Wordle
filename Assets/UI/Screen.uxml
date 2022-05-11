@@ -1,0 +1,166 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Test_Wordle/UI/ScreenStyle.uss?fileID=7433441132597879392&amp;guid=e919520b850129242a42ca2d8de7a4d0&amp;type=3#ScreenStyle" />
+    <ui:VisualElement name="screen" style="flex-grow: 1; background-color: rgb(255, 255, 255); align-items: center;">
+        <ui:VisualElement name="main-container" style="max-width: 40%; flex-grow: 1; min-width: 40%; min-height: auto; width: 40%;">
+            <ui:VisualElement name="header-container" style="min-width: 100%; height: 8%; flex-direction: row; justify-content: space-between; align-items: center;">
+                <ui:VisualElement name="header-left-container" style="flex-grow: 1; flex-direction: row; min-width: auto; min-height: 100%; width: 25%;">
+                    <ui:Button display-tooltip-when-elided="true" name="help-button" class="header-button" style="width: auto; min-width: auto; flex-grow: 1; background-image: resource(&apos;Sprites/Noun_Project_question_mark_icon_1101884_cc.svg&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+                    <ui:VisualElement name="empty-space" style="width: 50%; flex-grow: 0; min-width: auto;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="header-Middle-container" style="width: 50%; min-height: 100%;">
+                    <ui:Label text="WORDLE" display-tooltip-when-elided="true" style="font-size: 45px; color: rgb(0, 0, 0); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: auto; flex-grow: 1; flex-basis: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center; -unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="header-right-container" style="flex-grow: 1; flex-direction: row-reverse; min-width: auto; min-height: 100%; width: 25%;">
+                    <ui:Button display-tooltip-when-elided="true" name="leave-button" class="header-button" style="background-image: resource(&apos;Sprites/018_128_arrow_exit_logout-512&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+                    <ui:Button display-tooltip-when-elided="true" name="replay-button" class="header-button" style="background-image: resource(&apos;Sprites/replay-20-470364&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="cells-container" style="min-width: 100%; height: 40%; align-items: center;">
+                <ui:VisualElement name="rows-container" style="flex-grow: 1; width: 50%; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+                    <ui:VisualElement name="cells-row" style="width: 100%; flex-grow: 1; min-width: auto; min-height: auto; flex-direction: row;">
+                        <ui:VisualElement name="cell-11" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-12" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-13" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-14" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-15" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="cells-row" style="width: 100%; flex-grow: 1; min-width: auto; min-height: auto; flex-direction: row;">
+                        <ui:VisualElement name="cell-21" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-22" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-23" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-24" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-25" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="cells-row" style="width: 100%; flex-grow: 1; min-width: auto; min-height: auto; flex-direction: row;">
+                        <ui:VisualElement name="cell-31" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-32" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-33" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-34" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-35" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="cells-row" style="width: 100%; flex-grow: 1; min-width: auto; min-height: auto; flex-direction: row;">
+                        <ui:VisualElement name="cell-41" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-41" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-43" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-44" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-45" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="cells-row" style="width: 100%; flex-grow: 1; min-width: auto; min-height: auto; flex-direction: row;">
+                        <ui:VisualElement name="cell-51" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-52" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-53" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-54" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-55" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="cells-row" style="width: 100%; flex-grow: 1; min-width: auto; min-height: auto; flex-direction: row;">
+                        <ui:VisualElement name="cell-61" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-62" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-63" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-64" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="cell-65" class="cell" style="flex-grow: 1; height: auto;">
+                            <ui:Label text="A" display-tooltip-when-elided="true" name="cell-text" class="cell-text" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; align-items: center; justify-content: center; -unity-text-align: middle-center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="keyboard-container" style="min-width: 100%; height: 30%; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;">
+                <ui:VisualElement name="keys-row" class="keys-row" style="flex-direction: row;">
+                    <ui:Button text="Q" display-tooltip-when-elided="true" name="q-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="W" display-tooltip-when-elided="true" name="w-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="E" display-tooltip-when-elided="true" name="e-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="R" display-tooltip-when-elided="true" name="r-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="T" display-tooltip-when-elided="true" name="t-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="Y" display-tooltip-when-elided="true" name="y-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="U" display-tooltip-when-elided="true" name="u-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="I" display-tooltip-when-elided="true" name="i-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="O" display-tooltip-when-elided="true" name="o-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="P" display-tooltip-when-elided="true" name="p-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="keys-row" class="keys-row" style="flex-direction: row;">
+                    <ui:Button text="A" display-tooltip-when-elided="true" name="a-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="S" display-tooltip-when-elided="true" name="s-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="D" display-tooltip-when-elided="true" name="d-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="F" display-tooltip-when-elided="true" name="f-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="G" display-tooltip-when-elided="true" name="g-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="H" display-tooltip-when-elided="true" name="h-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="J" display-tooltip-when-elided="true" name="j-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="K" display-tooltip-when-elided="true" name="k-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="L" display-tooltip-when-elided="true" name="l-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="Ñ" display-tooltip-when-elided="true" name="enie-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="keys-row" class="keys-row" style="flex-direction: row;">
+                    <ui:Button text="ENVIAR" display-tooltip-when-elided="true" name="send-button" class="key" style="width: auto; min-width: 90px; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="Z" display-tooltip-when-elided="true" name="z-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="X" display-tooltip-when-elided="true" name="x-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="C" display-tooltip-when-elided="true" name="c-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="V" display-tooltip-when-elided="true" name="v-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="B" display-tooltip-when-elided="true" name="b-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="N" display-tooltip-when-elided="true" name="n-button" class="key" style="width: auto; min-width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button text="M" display-tooltip-when-elided="true" name="m-button" class="key" style="width: auto; flex-grow: 1; height: 100%;" />
+                    <ui:Button display-tooltip-when-elided="true" name="erase-button" text="&lt;-" class="key" style="width: auto; min-width: 60px; flex-grow: 1; height: 100%;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="result-container" style="height: auto; flex-grow: 1; align-items: center; justify-content: center;">
+                <ui:Label display-tooltip-when-elided="true" name="word-label" style="-unity-font-style: bold; font-size: 74px; -unity-text-align: middle-center; -unity-slice-left: 10; -unity-slice-top: 10; -unity-slice-right: 10; -unity-slice-bottom: 10;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
