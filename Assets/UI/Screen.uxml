@@ -1,18 +1,18 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Test_Wordle/UI/ScreenStyle.uss?fileID=7433441132597879392&amp;guid=e919520b850129242a42ca2d8de7a4d0&amp;type=3#ScreenStyle" />
+    <Style src="project://database/Assets/UI/ScreenStyle.uss?fileID=7433441132597879392&amp;guid=e919520b850129242a42ca2d8de7a4d0&amp;type=3#ScreenStyle" />
     <ui:VisualElement name="screen" style="flex-grow: 1; background-color: rgb(255, 255, 255); align-items: center;">
         <ui:VisualElement name="main-container" style="max-width: 40%; flex-grow: 1; min-width: 40%; min-height: auto; width: 40%;">
             <ui:VisualElement name="header-container" style="min-width: 100%; height: 8%; flex-direction: row; justify-content: space-between; align-items: center;">
                 <ui:VisualElement name="header-left-container" style="flex-grow: 1; flex-direction: row; min-width: auto; min-height: 100%; width: 25%;">
-                    <ui:Button display-tooltip-when-elided="true" name="help-button" class="header-button" style="width: auto; min-width: auto; flex-grow: 1; background-image: resource(&apos;Sprites/Noun_Project_question_mark_icon_1101884_cc.svg&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+                    <ui:Button display-tooltip-when-elided="true" name="help-button" class="header-button" style="width: auto; min-width: auto; flex-grow: 1; background-image: resource(&apos;Sprites/Buttons/Noun_Project_question_mark_icon_1101884_cc.svg&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
                     <ui:VisualElement name="empty-space" style="width: 50%; flex-grow: 0; min-width: auto;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="header-Middle-container" style="width: 50%; min-height: 100%;">
                     <ui:Label text="WORDLE" display-tooltip-when-elided="true" style="font-size: 45px; color: rgb(0, 0, 0); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: auto; flex-grow: 1; flex-basis: auto; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: center; -unity-text-align: middle-center;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="header-right-container" style="flex-grow: 1; flex-direction: row-reverse; min-width: auto; min-height: 100%; width: 25%;">
-                    <ui:Button display-tooltip-when-elided="true" name="leave-button" class="header-button" style="background-image: resource(&apos;Sprites/018_128_arrow_exit_logout-512&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
-                    <ui:Button display-tooltip-when-elided="true" name="replay-button" class="header-button" style="background-image: resource(&apos;Sprites/replay-20-470364&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+                    <ui:Button display-tooltip-when-elided="true" name="leave-button" class="header-button" style="background-image: resource(&apos;Sprites/Buttons/018_128_arrow_exit_logout-512&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
+                    <ui:Button display-tooltip-when-elided="true" name="replay-button" class="header-button" style="background-image: resource(&apos;Sprites/Buttons/replay-20-470364&apos;); -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="cells-container" style="min-width: 100%; height: 40%; align-items: center;">

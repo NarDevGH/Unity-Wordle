@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/HowToPlay/HowToPlay_Style.uss?fileID=7433441132597879392&amp;guid=e5deab00f7e685e45b2f27c9059dbdaf&amp;type=3#HowToPlay_Style" />
+    <ui:VisualElement name="Screen" style="flex-grow: 1; align-items: center;">
+        <ui:VisualElement name="Main-Container" style="min-height: 100%; max-width: 40%; width: 40%; min-width: 40%; background-color: rgba(176, 176, 176, 0.96); height: 100%;">
+            <ui:VisualElement name="Top-Container" style="min-height: 10%; flex-direction: row; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 2px; justify-content: space-between;">
+                <ui:Label text="How To Play" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 55px; flex-grow: 1; min-width: 38px; width: 379px; margin-left: 8px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                <ui:Button text="X" display-tooltip-when-elided="true" name="exit-button" class="header-button" style="padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; margin-left: 10px; margin-right: 10px; margin-top: 15px; margin-bottom: 15px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content-Container" style="flex-grow: 1;">
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1">
+                    <ui:Label text="Guess the hidden word in six tries.&#10;&#10;Each try must be a valid 5-letter word.&#10;&#10;After each try the color of the letters changes to show how close you are to guessing the word." display-tooltip-when-elided="true" style="font-size: 25px; -unity-text-align: upper-center; white-space: normal;" />
+                    <ui:Label text="Examples:" display-tooltip-when-elided="true" enable-rich-text="true" style="-unity-font-style: bold; font-size: 35px;" />
+                    <ui:VisualElement class="examples-images" style="background-image: resource(&apos;Sprites/Tutorial/Example_1&apos;);" />
+                    <ui:Label text="The letter R is in the word and in the correct position." display-tooltip-when-elided="true" class="examples-text" style="white-space: normal;" />
+                    <ui:VisualElement class="examples-images" style="background-image: resource(&apos;Sprites/Tutorial/Example_2&apos;);" />
+                    <ui:Label text="The letter C is in the word but in the wrong position." display-tooltip-when-elided="true" class="examples-text" style="white-space: normal;" />
+                    <ui:VisualElement class="examples-images" style="background-image: resource(&apos;Sprites/Tutorial/Example_3&apos;); width: 282px; height: 62px;" />
+                    <ui:Label text="The letter O is not in the word." display-tooltip-when-elided="true" class="examples-text" />
+                    <ui:Label text="There may be repeated letters and in that case the tracks are independent for each letter and have priority." display-tooltip-when-elided="true" class="main-text" style="border-top-color: rgba(0, 0, 0, 0); border-top-width: 35px; -unity-text-align: upper-center;" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

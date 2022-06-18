@@ -1,0 +1,36 @@
+.examples-text {
+    font-size: 24px;
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-left-width: 36px;
+}
+
+.examples-images {
+    left: 40px;
+    -unity-background-scale-mode: scale-and-crop;
+    min-width: 200px;
+    min-height: 60px;
+    width: 282px;
+    height: 62px;
+}
+
+.main-text {
+    font-size: 33px;
+    -unity-text-align: upper-center;
+    white-space: normal;
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-bottom-width: 64px;
+}
+
+.header-button {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: rgb(159, 159, 159);
+    color: rgb(0, 0, 0);
+}
+
+.header-button:hover {
+    background-color: rgb(149, 149, 149);
+}

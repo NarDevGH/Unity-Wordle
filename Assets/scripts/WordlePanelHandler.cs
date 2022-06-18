@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 
 public class WordlePanelHandler : MonoBehaviour
 {
+    [SerializeField] private UIDocument howtoplayPanel;
     private UIDocument wordlePanel;
     private List<List<VisualElement>> cellsRows = new List<List<VisualElement>>();
     private List<VisualElement> currentCellsRow = new List<VisualElement>();
@@ -20,11 +21,14 @@ public class WordlePanelHandler : MonoBehaviour
 
     private Button replayButton;
 
-    private WordsHandler wordsHandler = new WordsHandler();
-
     private enum letterState {DontHave,Have,Correct}
-    private enum GameState {Playing,NotPlaying}
-    private GameState currentGameState = GameState.NotPlaying;
+    public enum GameState {Playing,NotPlaying,GameOver}
+    public GameState CurrentGameState 
+    { 
+        get { return _currentGameState; }
+        set { _currentGameState = value; } 
+    }
+    private GameState _currentGameState = GameState.NotPlaying;
 
     private void OnEnable()
     {
@@ -40,9 +44,21 @@ public class WordlePanelHandler : MonoBehaviour
 
         BindReplayButton(root);
         BindQuitButton(root);
-
+        BindHelpButton(root);
         currentWord = "";
         BindKeyboardPanelKeys();
+    }
+
+    private void BindHelpButton(VisualElement root)
+    {
+        root.Q<Button>("help-button").clicked += () => ShowHelpPanel();
+    }
+
+    private void ShowHelpPanel() 
+    {
+        _currentGameState = GameState.NotPlaying;
+
+        howtoplayPanel.sortingOrder = 1;
     }
 
     private void BindReplayButton(VisualElement root)
@@ -70,7 +86,7 @@ public class WordlePanelHandler : MonoBehaviour
 
         replayButton.SetEnabled(false);
 
-        currentGameState = GameState.Playing;
+        _currentGameState = GameState.Playing;
     }
 
     private void InitKeyboardPanel()
@@ -92,7 +108,7 @@ public class WordlePanelHandler : MonoBehaviour
 
     private void Update()
     {
-        if (currentGameState == GameState.Playing) 
+        if (_currentGameState == GameState.Playing) 
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -140,7 +156,7 @@ public class WordlePanelHandler : MonoBehaviour
     
     private void OnLetterInput(char letter)
     {
-        if (currentGameState == GameState.Playing) {
+        if (_currentGameState == GameState.Playing) {
             if (currentWord.Length < 5)
             {
                 currentCellsRow[currentWord.Length].Q<Label>("cell-text").text = $"{letter}";
@@ -149,77 +165,87 @@ public class WordlePanelHandler : MonoBehaviour
         }
     }
 
-
     private void OnEraseInput()
     {
-        if (currentGameState == GameState.NotPlaying) return;
-        if (currentWord.Length < 1) return;
-        currentCellsRow[currentWord.Length-1].Q<Label>("cell-text").text = "";
-        if (currentWord.Length == 1)
+        if (_currentGameState == GameState.Playing) 
         {
-            currentWord = "";
-        }
-        else 
-        {
-            currentWord = currentWord.Substring(0, currentWord.Length - 1);
+            //if there is nothing to erase, return
+            if (currentWord.Length < 1) return;
+
+            //clear cell text
+            currentCellsRow[currentWord.Length-1].Q<Label>("cell-text").text = "";
+
+            //set currentword erasing the last letter
+            if (currentWord.Length == 1)
+            {
+                currentWord = "";
+            }
+            else 
+            {
+                currentWord = currentWord.Substring(0, currentWord.Length - 1);
+            }
         }
     }
 
     private void OnSendInput() 
     {
-        if (currentGameState == GameState.NotPlaying) return;
-        if (currentWord.Length < 5) return;
-        if (!WordsHandler.words.Contains(currentWord)) return;
-        if (currentWord == matchWord)
+        if (_currentGameState == GameState.Playing) 
         {
-            currentCellsRow.ForEach(cell => cell.AddToClassList("cell-correct"));
-            EndGame();
-        }
-        else
-        {
-            // check each letter and change the cells of the current row and the keyboardpanel keys
-            for (int i = 0; i < matchWord.Length; i++)
+            if (currentWord.Length < 5) return;
+
+            if (!WordsHandler.FiveLetterWords.Contains(currentWord)) return;
+
+            if (currentWord == matchWord)
             {
-                if (currentWord[i] == matchWord[i])
-                {
-                    currentCellsRow[i].AddToClassList("cell-correct");
-
-                    UpdateKeyboardKeyState(currentWord[i], letterState.Correct);
-                }
-                else if (matchWord.Contains(currentWord[i]))
-                {
-                    if(matchWord.Count(x => x == currentWord[i]) == 1)
-                    {
-                        // if it only has it once, check if ther is a correct match. If there is,
-                        // do not mark this cell and its key as Have
-                        var index = matchWord.IndexOf(currentWord[i]);
-                        if (currentWord[index] == matchWord[index]) 
-                        {
-                            continue;
-                        }
-                    }
-
-                    currentCellsRow[i].AddToClassList("cell-have");
-
-                    UpdateKeyboardKeyState(currentWord[i], letterState.Have);
-                }
-                else
-                {
-                    currentCellsRow[i].AddToClassList("cell-donthave");
-
-                    UpdateKeyboardKeyState(currentWord[i], letterState.DontHave);
-                }
-            }
-
-            var currentCellsRowIndex = cellsRows.IndexOf(currentCellsRow);
-            if (currentCellsRowIndex < 5)
-            {
-                currentCellsRow = cellsRows[++currentCellsRowIndex];
-                currentWord = "";
-            }
-            else 
-            {
+                currentCellsRow.ForEach(cell => cell.AddToClassList("cell-correct"));
                 EndGame();
+            }
+            else
+            {
+                // check each letter and change the cells of the current row and the keyboardpanel keys
+                for (int i = 0; i < matchWord.Length; i++)
+                {
+                    if (currentWord[i] == matchWord[i])
+                    {
+                        currentCellsRow[i].AddToClassList("cell-correct");
+
+                        UpdateKeyboardKeyState(currentWord[i], letterState.Correct);
+                    }
+                    else if (matchWord.Contains(currentWord[i]))
+                    {
+                        if(matchWord.Count(x => x == currentWord[i]) == 1)
+                        {
+                            // if it only has it once, check if ther is a correct match. If there is,
+                            // do not mark this cell and its key as Have
+                            var index = matchWord.IndexOf(currentWord[i]);
+                            if (currentWord[index] == matchWord[index]) 
+                            {
+                                continue;
+                            }
+                        }
+
+                        currentCellsRow[i].AddToClassList("cell-have");
+
+                        UpdateKeyboardKeyState(currentWord[i], letterState.Have);
+                    }
+                    else
+                    {
+                        currentCellsRow[i].AddToClassList("cell-donthave");
+
+                        UpdateKeyboardKeyState(currentWord[i], letterState.DontHave);
+                    }
+                }
+
+                var currentCellsRowIndex = cellsRows.IndexOf(currentCellsRow);
+                if (currentCellsRowIndex < 5)
+                {
+                    currentCellsRow = cellsRows[++currentCellsRowIndex];
+                    currentWord = "";
+                }
+                else 
+                {
+                    EndGame();
+                }
             }
         }
     }
@@ -236,7 +262,7 @@ public class WordlePanelHandler : MonoBehaviour
 
         replayButton.SetEnabled(true);
 
-        currentGameState = GameState.NotPlaying;
+        _currentGameState = GameState.GameOver;
     }
 
     private void UpdateKeyboardKeyState(char letter,letterState state) 
@@ -307,7 +333,7 @@ public class WordlePanelHandler : MonoBehaviour
 
     private string RandomFiveLettersWord() 
     {
-        string word = WordsHandler.words[Random.Range(0, WordsHandler.words.Count - 1)];
+        string word = WordsHandler.FiveLetterWords[Random.Range(0, WordsHandler.FiveLetterWords.Count - 1)];
         return word;
     }
 
