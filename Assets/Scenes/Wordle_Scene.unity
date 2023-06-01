@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155427709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.79, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 2690c73c6841ee146b755cc7c1313167, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: d0057ec35ba07844b876df85a0980459, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 4701357b8bfe0b242ac55b84cbdb8e31, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: d8afd3135093b7d46a0aecffa3182798, type: 3}
   m_SortingOrder: 0
 --- !u!4 &1522522936
 Transform:
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522522934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e660ca24befb04fb8606d69b66a997, type: 3}
+  m_Script: {fileID: 11500000, guid: 7319220b34888744e8c8ce8b467338b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   howtoplayPanel: {fileID: 2082840797}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522522934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27ada82f368853448b52c3bc283679f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d0a7681858dacf4b8fd06cea9e850e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2082840796
@@ -346,10 +346,10 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 2690c73c6841ee146b755cc7c1313167, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: d0057ec35ba07844b876df85a0980459, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 1308930373a02694fb13bc34f8e7b267, type: 3}
-  m_SortingOrder: -1
+  sourceAsset: {fileID: 9197481963319205126, guid: 41170b41dea0d9d4ba08505669cedeff, type: 3}
+  m_SortingOrder: 1
 --- !u!4 &2082840798
 Transform:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2082840796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2377e0ff7d9912149ad392d3c61d9eff, type: 3}
+  m_Script: {fileID: 11500000, guid: 6036a5de6a2808b4d8e6ae7f60862e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 2082840797}
